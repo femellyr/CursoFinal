@@ -29,7 +29,7 @@ router.post('/signin', isNotLoggedin, (req,res,next) => {
      res.render('profile');
     });     
     
-router.get('/logout', isNotLoggedin, (req,res) => {
+router.get('/logout', (req,res) => {
     req.logOut();
     res.redirect('/signin');
     });     
