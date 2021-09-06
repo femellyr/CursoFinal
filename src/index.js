@@ -23,7 +23,7 @@ app.engine('.hbs',exphbs({
         extname: '.hbs',
         helpers: require('./lib/handlebars')
 }));
-app.set('view engine','.hbs');
+app.set('view engine','.hbs');  // aqui define que handlebars es el engine
 // middleware
 app.use(session({
     secret: 'unaprueba',
@@ -42,6 +42,7 @@ app.use(passport.session());
 app.use((req,res,next)  => {
     app.locals.success = req.flash('success');
     app.locals.success = req.flash('message');
+    // carga los datos de la sesion de serializar
     app.locals.user = req.user;
     next();
 });
