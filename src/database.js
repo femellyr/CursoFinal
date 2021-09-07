@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-const {promisify} = require('util');
+const {promisify} = require('util');  // funcion que permite ejecutar async en sql
 
 const {database} = require('./keys');
 
